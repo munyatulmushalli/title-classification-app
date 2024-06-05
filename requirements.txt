@@ -1,1 +1,9 @@
 nltk
+joblib
+pandas
+matplotlib
+seaborn
+os
+tensorflow
+hashlib
+pickle
