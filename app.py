@@ -70,7 +70,9 @@ if uploaded_file is not None:
         predicted_labels = label_encoder.inverse_transform(predictions.argmax(axis=1))
         df['predicted_category'] = predicted_labels
         st.write(df[['titles', 'predicted_category']])
-        st.download_button(label="Download Predictions", data=df.to_csv(index=False), mime='text/csv', file_name='predictions.csv')
+        # Exclude the 'processed_title' column from the CSV output
+        output_df = df[['titles', 'predicted_category']]
+        st.download_button(label="Download Predictions", data=output_df.to_csv(index=False), mime='text/csv', file_name='predictions.csv')
     else:
         st.error("The uploaded CSV file must contain a column named 'titles'.")
 
