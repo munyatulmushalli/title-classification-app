@@ -55,8 +55,8 @@ def preprocess_text(text):
     lemmatized_words = [lemmatizer.lemmatize(word) for word in filtered_words]
     return ' '.join(lemmatized_words)
 
-st.title('Title Categorization App')
-st.write("Upload a CSV file with a column named 'titles' or enter a title for categorization.")
+st.title('Title Classification App')
+st.write("Upload a CSV file with a column named 'titles' or enter a title for classification.")
 
 # File upload
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
@@ -78,7 +78,7 @@ if uploaded_file is not None:
 
 # Single title input
 title_input = st.text_input("Or enter a title here")
-if st.button("Categorize"):
+if st.button("Classify"):
     if title_input:
         processed_title = preprocess_text(title_input)
         sequence = tokenizer.texts_to_sequences([processed_title])
