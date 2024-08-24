@@ -55,7 +55,7 @@ def preprocess_text(text):
     lemmatized_words = [lemmatizer.lemmatize(word) for word in filtered_words]
     return ' '.join(lemmatized_words)
 
-st.title('Title Classification App')
+st.title('ECE FYP titles classifier')
 st.write("Upload a CSV file with a column named 'titles' or enter a title for classification.")
 
 # File upload
