@@ -20,6 +20,9 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
+# Add new library
+nltk.download('punkt_tab', quiet=True)
+
 # Load the model and tokenizer
 model = load_model('text_classification_model.keras')
 tokenizer = joblib.load('tokenizer.joblib')
